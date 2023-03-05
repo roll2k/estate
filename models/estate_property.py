@@ -4,7 +4,7 @@ class EstateProperty(models.Model):
     _name = "estate.property"
     _description ="Real Estate"
     name = fields.Char(required=True)
-    description = fields.Text()
+    description = fields.Char()
     postcode = fields.Char()
     date_availability = fields.Date()
     expected_price = fields.Float(required=True)
@@ -16,8 +16,8 @@ class EstateProperty(models.Model):
     garden = fields.Boolean()
     garden_area = fields.Integer()
     garden_orientation = fields.Selection(
-        string='Type',
-        selection = [('East','e'), ('West','w'),('North','n'), ('South','s')],
+        string='Garden Orientation',
+        selection =[('e', 'East'), ('w', 'West'), ('n', 'North'), ('s', 'South')],
         help = 'Garden orientation'
     )
 
